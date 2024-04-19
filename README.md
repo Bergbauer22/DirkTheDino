@@ -9,7 +9,7 @@
 
 
 
-### This Btd6 Mod add the custom Hero Dirk  
+### This Btd6 Mod adds the custom Hero Dirk  
 
 
 
