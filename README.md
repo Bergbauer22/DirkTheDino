@@ -37,7 +37,7 @@
 15. Energy pillars: Press tab to switch your current pillar and control the position with your arrow keys
 16. Rise of his power: Every non paragon tower recieves an energie buff(+15% Attack Speed)
 17. Overpowering himself: Energie can now spring to other bloons and his 3 energie balls combines into 1 Mega-Energie-Ball
-18. Dirkerine: Dirk optained a extream healing factor which makes him regenerate lives if you are under 1000 hearths. DOESN'T WORK WHILE YOUR DRONE IS ACTIVE
+18. Dirkerine: Dirk optained a extream healing factor which makes him regenerate lives if you are under 1000 hearths
 19. Dirk turns into god mode and improves his energie with the power of lightnings
 20. Over the top: Dirk shares his power even with paragons
 
