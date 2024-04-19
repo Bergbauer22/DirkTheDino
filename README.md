@@ -39,6 +39,10 @@
 19. Dirk turns into god mode and improves his energie with the power of lightnings
 20. Over the top: Dirk shares his power even with paragons
 
+
+Thanks to the english Youtuber Tewtiy for making the voicelines
+
+
 <h1 aling="left"><img alt="GitHub all releases" height="25" src="https://img.shields.io/github/downloads/Bergbauer22/DirkTheDino/total?label=Total%20Dowloads"></h1>
 
 
