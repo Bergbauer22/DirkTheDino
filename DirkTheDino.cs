@@ -55,7 +55,12 @@ public class DirkTheDino : BloonsTD6Mod
             cooldownSelectSounds = 10;
             if (ability.tower.towerModel.name.Contains("DirkTheDino-DinoDirk"))
             {
-                RandomAbility1Sound();
+                if(cooldownSelectSounds <= 4)
+                {
+                    RandomAbility1Sound();
+                    cooldownSelectSounds = 15;
+                }
+
                 TimeSinceTransformUsed = 30;
                 DirksXKord = ability.tower.Position.X;
                 DirksYKord = ability.tower.Position.Y;
@@ -72,8 +77,12 @@ public class DirkTheDino : BloonsTD6Mod
         }
         if (ability.abilityModel.name == "AbilityModel_Drone")
         {
-            RandomAbility2Sound();
-            cooldownSelectSounds = 10;
+            if (cooldownSelectSounds <= 4)
+            {
+                RandomAbility2Sound();
+                cooldownSelectSounds = 15;
+            }
+
             if (ability.tower.towerModel.name.Contains("DirkTheDino-DinoDirk"))
             {
                 this.currentDamage = (int)ability.tower.damageDealt;
@@ -86,10 +95,14 @@ public class DirkTheDino : BloonsTD6Mod
         }
         if(ability.abilityModel.name == "AbilityModel_PortalGun")
         {
-            RandomAbility3Sound();
+            if (cooldownSelectSounds <= 4)
+            {
+                RandomAbility3Sound();
+                cooldownSelectSounds = 15;
+            }
             RandomPortalSoundEffect();
             AfterPortalGunSound();
-            cooldownSelectSounds = 10;
+            cooldownSelectSounds = 15;
         }
     }
 
@@ -191,63 +204,67 @@ public class DirkTheDino : BloonsTD6Mod
     public void UpgradeEffect(Tower Dirk)
     {
         InGame.instance.bridge.simulation.SpawnEffect(ModContent.CreatePrefabReference<UpgradeEffect1>(), new Il2CppAssets.Scripts.Simulation.SMath.Vector3(Dirk.Position.X, Dirk.Position.Y, Dirk.Position.Z), 0,9,10);
-        switch (Dirk.towerModel.tiers.Max())
+        if (cooldownSelectSounds <= 6)
         {
-            case 2:
-                RandomBeastHandlerBuffSound();
-                break;
-            case 6:
-                RandomBeastHandlerBuffSound();
-                break;
-            case 3:
-                RandomAbility1Sound();
-                break;
-            case 9:
-                RandomAbility1Sound();
-                break;
-            case 10:
-                RandomAbility2Sound();
-                break;
-            case 13:
-                RandomAbility3Sound();
-                break;
-            case 5:
-                RandomElectroSound();
-                break;
-            case 7:
-                RandomElectroSound();
-                break;
-            case 4:
-                RandomElectroSound();
-                break;
-            case 12:
-                RandomElectroSound();
-                break;
-            case 15:
-                RandomAbility2Sound();
-                break;
-            case 11:
-                RandomJetSound();
-                break;
-            case 14:
-                RandomJetSound();
-                break;
-            case 16:
-                RandomJetSound();
-                break;
-            case 8:
-                PlaySound("DirkRoarSound");
-                break;
-            case 17:
-                RandomIsabLoveSoundEffect();
-                break;
-            case 18:
-                PlaySound("DirkRoarSound");
-                break;
-            case 19:
-                DeadpoolSoundEffect();
-                break;
-        }
+            cooldownSelectSounds = 16;
+            switch (Dirk.towerModel.tiers.Max())
+            {
+                case 2:
+                    RandomBeastHandlerBuffSound();
+                    break;
+                case 6:
+                    RandomBeastHandlerBuffSound();
+                    break;
+                case 3:
+                    RandomAbility1Sound();
+                    break;
+                case 9:
+                    RandomAbility1Sound();
+                    break;
+                case 10:
+                    RandomAbility2Sound();
+                    break;
+                case 13:
+                    RandomAbility3Sound();
+                    break;
+                case 5:
+                    RandomElectroSound();
+                    break;
+                case 7:
+                    RandomElectroSound();
+                    break;
+                case 4:
+                    RandomElectroSound();
+                    break;
+                case 12:
+                    RandomElectroSound();
+                    break;
+                case 15:
+                    RandomAbility2Sound();
+                    break;
+                case 11:
+                    RandomJetSound();
+                    break;
+                case 14:
+                    RandomJetSound();
+                    break;
+                case 16:
+                    RandomJetSound();
+                    break;
+                case 8:
+                    PlaySound("DirkRoarSound");
+                    break;
+                case 17:
+                    RandomIsabLoveSoundEffect();
+                    break;
+                case 18:
+                    PlaySound("DirkRoarSound");
+                    break;
+                case 19:
+                    DeadpoolSoundEffect();
+                    break;
+                    }
+            }
     }
     public void RandomPortalSoundEffect()
     {
@@ -1008,11 +1025,11 @@ public class DirkTheDino : BloonsTD6Mod
                 {
                     if (towers[i].towerModel.name.Contains("DirkTheDino-DinoDirk"))
                     {
-                        if (LastRandomSound <= 0 && rnd(1, 1000) == 3 && cooldownSelectSounds <= 0)
+                        if (LastRandomSound <= 0 && rnd(1, 20000) == 3 && cooldownSelectSounds <= 0)
                         {
                             RandomSelectSound(towers[i].towerModel.tiers.Max());
-                            cooldownSelectSounds = 9;
-                            LastRandomSound = 30;
+                            cooldownSelectSounds = 30;
+                            LastRandomSound = 190;
                         }
                     }        
                 } 
@@ -1824,7 +1841,7 @@ public class DirkTheDino : BloonsTD6Mod
             }
             if(cooldownSelectSounds <= 0)
             {
-                cooldownSelectSounds = 8;
+                cooldownSelectSounds = 18;
                 RandomSelectSound(tower.towerModel.tiers.Max());
             }
         }

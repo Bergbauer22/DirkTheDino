@@ -203,7 +203,7 @@ public class DroneAttackModell1 : ModTower
         AttackModel attackModel = TowerModelExt.GetAttackModel(towerModel);
         ProjectileModelBehaviorExt.AddBehavior<DamageModifierForTagModel>(attackModel.weapons[0].projectile, new DamageModifierForTagModel("dmgMod", "Moabs", 1f, 1f, false, false));
         attackModel.weapons[0].projectile.hasDamageModifiers = true;
-        ProjectileModelExt.GetDamageModel(attackModel.weapons[0].projectile).damage += 1f;
+        ProjectileModelExt.GetDamageModel(attackModel.weapons[0].projectile).damage += 2f;
         ProjectileModelBehaviorExt.GetBehavior<TravelStraitModel>(attackModel.weapons[0].projectile).Speed = 250f;
         ProjectileModelBehaviorExt.GetBehavior<TravelStraitModel>(attackModel.weapons[0].projectile).lifespan = 4f;
         attackModel.weapons[0].ejectY = -40f;
@@ -362,8 +362,8 @@ public class DroneAttackModell3 : ModTower
         TowerModelExt.GetWeapon(towerModel).projectile.ignoreBlockers = true;
         TowerModelExt.GetWeapon(towerModel).projectile.canCollisionBeBlockedByMapLos = false;
         TowerModelExt.GetAttackModel(towerModel).attackThroughWalls = true;
-        attackModel.weapons[0].projectile.AddBehavior(new WindModel("WindModel_", 1, 2, 0.1f,true,null,5, "Ddt",5));
-        attackModel.weapons[0].projectile.AddBehavior(new WindModel("WindModel_", 1, 2, 0.1f, true, null, 2, "Moab", 2));
+        attackModel.weapons[0].projectile.AddBehavior(new WindModel("WindModel_", 1, 2, 0.5f,true,null,5, "Ddt",5));
+        attackModel.weapons[0].projectile.AddBehavior(new WindModel("WindModel_", 1.2f, 3, 0.4f, true, null, 2, "Moabs", 2));
         attackModel.weapons[0].projectile.GetDamageModel().immuneBloonProperties = BloonProperties.None;
         towerModel.GetAttackModel().weapons[0].GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
         WeaponModel attackoffset = ModelExt.Duplicate<WeaponModel>(attackModel.weapons[0]);

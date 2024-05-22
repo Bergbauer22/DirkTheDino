@@ -417,7 +417,7 @@ public class Levels
     }
     public class Level15 : ModHeroLevel<DinoDirk>
     {
-        public override string Description => "EnergieCores: Press tab to switch your current drone and control the position with your arrow keys";
+        public override string Description => "Energie Pillars: Press tab to switch your current Pillar and control the position with your arrow keys";
 
         public override int Level => 15;
 
